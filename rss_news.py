@@ -3,6 +3,7 @@ import smtplib
 import ssl
 from email.message import EmailMessage
 import re
+import os  # ✅ 환경변수 사용을 위한 모듈
 
 # ✅ 키워드 및 RSS 목록
 keywords = ["네이버", "AI", "플랫폼", "포털", "제휴"]
@@ -64,11 +65,12 @@ if __name__ == "__main__":
     else:
         email_body = "<h3>오늘은 키워드에 해당하는 뉴스가 없습니다.</h3>"
 
-    # 👇 여기에 본인 정보 입력
-    sender = "gustavhwang@gmail.com"         # Gmail 주소
-    receiver = "gustavhwang@gmail.com"   # 받는 사람
-    app_pw = "udtq mysk biqh hwgu"            # Gmail 앱 비밀번호
+    # ✅ 환경변수에서 이메일 정보 불러오기
+    sender = os.getenv("EMAIL_ADDRESS")
+    receiver = os.getenv("RECEIVER_EMAIL")
+    app_pw = os.getenv("EMAIL_PASSWORD")
 
+    # ✅ 전송
     send_email(
         subject="📬 오늘의 주요 뉴스 브리핑",
         body_html=email_body,
