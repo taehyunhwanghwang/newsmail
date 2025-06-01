@@ -1,0 +1,27 @@
+name: Daily News Mailer
+
+on:
+  schedule:
+    - cron: '0 23 * * *'  # 매일 오전 8시 (UTC 23시)
+
+jobs:
+  send_news_email:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install feedparser requests beautifulsoup4
+
+    - name: Run news mailer script
+      env:
+        EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+        RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
+      run: python news_mailer.py
