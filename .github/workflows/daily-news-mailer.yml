@@ -1,8 +1,9 @@
 name: Daily News Mailer
 
 on:
+  workflow_dispatch:  # ✅ 수동 실행 버튼 활성화
   schedule:
-    - cron: '0 23 * * *'  # 매일 오전 8시 (UTC 23시)
+    - cron: '0 23 * * *'  # ✅ 한국 시간 오전 8시 (UTC 기준)
 
 jobs:
   send_news_email:
