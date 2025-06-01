@@ -9,8 +9,13 @@ import os  # ✅ 환경변수 사용을 위한 모듈
 keywords = ["네이버", "AI", "플랫폼", "포털", "제휴", "인공지능", "방통위", "과기부", "과방위"]
 rss_sources = {
     "조선일보": "https://www.chosun.com/arc/outboundfeeds/rss/?outputType=xml",
-    "중앙일보": "https://www.joongang.co.kr/rss",
+    "중앙일보": "https://rss.joins.com/",
     "한겨레": "https://www.hani.co.kr/rss/",
+    "동아일보": "https://rss.donga.com/",
+    "매일경제": "https://www.mk.co.kr/rss/30000001/",
+    "한국경제": "https://www.hankyung.com/feed/all-news",
+    "경향신문": "https://www.khan.co.kr/rss/rssdata/total_news.xml",
+    "연합뉴스": "https://www.yna.co.kr/rss/news.xml",
 }
 
 # ✅ HTML 제거 및 요약 정리
