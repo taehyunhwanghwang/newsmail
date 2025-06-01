@@ -6,7 +6,7 @@ import re
 import os  # ✅ 환경변수 사용을 위한 모듈
 
 # ✅ 키워드 및 RSS 목록
-keywords = ["네이버", "AI", "플랫폼", "포털", "제휴"]
+keywords = ["네이버", "AI", "플랫폼", "포털", "제휴", "인공지능", "김문수"]
 rss_sources = {
     "조선일보": "https://www.chosun.com/arc/outboundfeeds/rss/?outputType=xml",
     "중앙일보": "https://www.joongang.co.kr/rss",
